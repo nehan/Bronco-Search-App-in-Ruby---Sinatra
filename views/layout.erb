@@ -1,0 +1,23 @@
+<!doctype HTML> 
+<html>
+<head>
+<link href="/style.css" type="text/css" rel="stylesheet">
+<title><%= @title || "Student Information"%></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+<body>
+<header> 
+<label>Search Broncos!</label>
+<img src="/images/bronco.png">
+</header>
+<div id="main_page" class="main">
+<%=yield%>
+</div>		
+<footer class="fixed_footer">
+<div class="footer_text">
+<label class="footer_label">SCU ©2015</label>
+<a href="/"> Home </a>
+<a href="/about"> About Us</a> <a href="/contact">Contact Us</a> <a href="/career">Careers</a> </div>
+</footer>
+</body>
+</html>		

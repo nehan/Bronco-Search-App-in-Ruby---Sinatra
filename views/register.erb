@@ -1,0 +1,36 @@
+<form action="/register/new" method="post">
+<div class="register_page">
+<p> Registration </p></br>
+<label>First Name: </label>
+<input type="text" id="name" placeholder="Enter your First Name" name="student[first_name]" style="margin-left:22px;"></br>
+<label> Last Name: </label>
+<input type="text" placeholder="Enter your Last Name" name="student[last_name]" style="margin-left:24px;"></br>
+<label> SCU Email: </label>
+<input type="text" placeholder="Enter your SCU Email" name="student[scu_email]" style="margin-left:24px;"></br>
+<% if flash[:error] %>
+		    <p class="error_register"><%=flash[:error]%></p>
+<%end%>
+<label> Username: </label>
+<input type="text" placeholder="Enter your username" name="student[username]" style="margin-left:28px;"></br>
+<% if flash[:error_password] %>
+		    <p class="error_register"><%=flash[:error_password]%></p>
+<%end%>
+<label> Password: </label>
+<input type="password" placeholder="Enter your password" name="student[password]" style="margin-left:29px;"></br>
+<label> Re-enter: </label>
+<input type="password" placeholder="Re-enter your password" name="student_pass[conf_password]" style="margin-left:41px;"></br>
+<label> Program Name: </label>
+<input type="text" placeholder="M.S.(Computer Science)" name="student[program_name]"></br>
+</br>
+<label style="margin-left: -2px; position: relative;top: -22px;"> Expected Graduation year:</label> </br>
+<input type="text" placeholder="Enter in YYYY format" name="student[expected_grad_year]" style=" margin-top: -15px;  position: relative;  top: -16px;  margin-left: 190px;"></br>
+<label style="margin-left: -2px; position: relative;top: -22px;"> Courses Taken:</label></br>
+<textarea rows="3" cols="20" placeholder="COEN268-Mobile Application,COEN283-Operating System" name="student[courses]">
+</textarea>
+<%if @no_data%>
+<p> Username is already exists. Please try some other username.</p>
+<%else%>
+<input type="submit" class="register" id="register" value="Register Me!">
+<%end%>
+</div>	
+</form>	

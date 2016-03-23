@@ -1,0 +1,14 @@
+<div class="search_student">
+ <%if @no_data%>
+<p> No Record exists for current query. Try with some other search data.</p>
+To Go Back to Search page click here 
+<%else%>
+<ul>
+<%@student_data.each do |student| %>
+<li>
+<span><h1><%=student.first_name%><%=student.last_name%><h1></span>
+</li>
+<%end%>
+</ul>
+<%end%>
+</div>

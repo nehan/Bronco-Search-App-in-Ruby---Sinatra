@@ -1,0 +1,27 @@
+<div class="welcome">
+ <%@students.each do |stud|%>
+  <form action="/search/<%=stud.username%>" method="get">
+  <input type="submit" value="<=Search Results" class="back"></input>
+  <input type="hidden" name="student[first_name]" value="<%=stud.first_name%>"></input>
+  <div class="personal_data">
+      <span>
+         <img src="/images/profile_image.gif"> 
+         <h1> <%=stud.first_name%> <%=stud.last_name%> </h1>
+         <h2> <%=stud.program_name%></h2>
+         <label> Email: - <%=stud.scu_email%>
+         </label>
+      </span>
+      <label  style="position: relative; align-items: left; float: left; padding-left: 122px; margin-top: -14px;">  <strong>Member since-</strong> <%=stud.registered_on.strftime("%B %e, %Y")%></label> </br></br>
+      <label   style="margin-left: 124px;"> <strong>Expected Graduation Year - </strong><%=stud.expected_grad_year%></label>
+      </br></br>
+      <label style="margin-left: 124px;"><strong> Courses Taken-</strong> </label>
+      <% courses_array = stud.courses.split(',')%>
+      <ul>
+         <% courses_array.each do |course|%>
+         <li> <%=course%></li>
+         <%end%>
+      </ul>
+	  </form>
+      <%end%>
+   </div>
+</div>

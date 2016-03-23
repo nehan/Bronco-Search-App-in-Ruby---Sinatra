@@ -1,0 +1,23 @@
+<form action="/welcome" method="get">
+<div class="search_page">
+		<div class="logo"><img src="images/sculogo.png"></div>
+		    <% if flash[:error] %>
+		    <p class="error"><%=flash[:error]%></p>
+			<%end%>
+			<% if flash[:error_user] %>
+			<p class="error"><%= flash[:error_user] %></p> 
+			<% end %>
+			<% if flash[:error_password] %>
+			<p class="error"><%= flash[:error_password] %></p> 
+			<% end %>
+		    <label class="user_name">User Name:<span class="red">*<span> </label>
+			<input type="text" id="search" placeholder="Enter the Username.." name="student[username]"></br>
+			
+			<label class="password"> Password:<span class="red">*<span> </label>
+			<input type="password" placeholder="Enter the Password.." id="password" name="student[password]">
+			
+		    <input type="submit" class="login_btn" id="login" value="Sign In"> 
+			<span><label class="new_usr">New User?</label> 
+			<a href='/register' class="register_user"> Register here! </a><span>
+</div>	
+</form>

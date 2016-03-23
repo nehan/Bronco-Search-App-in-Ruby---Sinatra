@@ -1,0 +1,21 @@
+<div class="search_student">
+<form action="/welcome_new/<%=@username%>" method="get">
+<input type="submit" value="<=Go Back" class="back"> </input>
+</form>
+<%if @no_data%>
+<p> No Record exists for current query. Try with some other conditions.</p>
+<%else%>
+<p style="color:green;"> We found below Bronco's.Click on the name to view complete user details. </p>
+<ul>
+<%@student_data.each do |student| %>
+<li>
+<form action="/details/<%=student.username%>" method="get">
+<input type="submit" value="<%=student.first_name%> <%=student.last_name%>"> </input>
+<h3> <%=student.program_name%> </h3>
+<h1> Email- <%=student.scu_email%> </h1>
+</form>
+</li>
+<%end%>
+</ul>
+<%end%>
+</div>

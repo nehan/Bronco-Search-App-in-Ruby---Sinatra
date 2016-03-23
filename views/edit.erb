@@ -1,0 +1,41 @@
+<div class="welcome">
+ <%@student_data.each do |stud|%>
+ <form action="/search/<%=stud.username%>" method="get">
+   <span><input type="search" placeholder="Search Broncos by First Name.." name="student[first_name]"></input>
+   <input type="submit" class="search_btn"> </input>
+   </span>
+ </form>  
+   <form action="/welcome/<%=stud.username%>" method="post">
+   <span class="menu">
+   <input type="submit" value="Save Profile" class="save"></input>
+   <a href="/" class="signout"> SignOut </a>
+   </span>
+   
+ <div class="edit_page">
+
+<label>First Name: </label>
+<input type="text" id="name" placeholder="Enter your First Name" name="student[first_name]" style="margin-left:22px;" value="<%=stud.first_name%>"></br>
+<label> Last Name: </label>
+<input type="text" placeholder="Enter your Last Name" name="student[last_name]" style="margin-left:24px;" value="<%=stud.last_name%>"></br>
+<label> SCU Email: </label>
+<input type="text" placeholder="Enter your SCU Email" name="student[scu_email]" style="margin-left: 25px;" value="<%=stud.scu_email%>"></br>
+<label> Username: </label>
+<input type="text" placeholder="Enter your username" name="student[username]" style="margin-left: 29px;" value="<%=stud.username%>"></br>
+<label> Password: </label>
+<input type="password" placeholder="Enter your password" name="student[password]" style="margin-left: 31px;" value="<%=stud.password%>"></br>
+<label> Re-enter: </label>
+<input type="password" placeholder="Re-enter your password" name="student[password]" style="margin-left: 42px;"></br>
+<label> Program Name: </label>
+<input type="text" placeholder="M.S.(Computer Science)" name="student[program_name]" value="<%=stud.program_name%>"></br>
+</br>
+<label style="margin-left: -2px; position: relative;top: -22px;"> Expected Graduation year:</label> </br>
+<input type="text" placeholder="Enter in YYYY format" name="student[expected_grad_year]" style=" margin-top: -15px;position:relative; top: -16px; margin-left: 180px;" value="<%=stud.expected_grad_year%>"></br>
+<label style="margin-left: -2px; position: relative;top: -22px;"> Courses Taken:</label></br>
+<textarea rows="3" cols="20" placeholder="COEN268-Mobile Application,COEN283-Operating System" name="student[courses]">
+<%=stud.courses%>
+</textarea>
+<%end%>
+</div>	
+      
+ </form>
+</div>

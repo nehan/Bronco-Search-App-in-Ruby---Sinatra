@@ -1,0 +1,8 @@
+- if @students.any?
+  ul#students
+    -@students.each do |stud|
+      li <a href="/#{stud.username}">#{stud.first_name}</a>
+	  h1 #{stud.password}
+	  h1 #{stud.program_name}
+- else
+  p No user have been created yet!
